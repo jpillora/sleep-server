@@ -67,8 +67,8 @@ if(program.daemonize && program.args.indexOf('is-daemon') === -1) {
   var path = program.daemonize;
   var spawn = require('child_process').spawn;
   
-  var prog = process.argv[1];
-  var args = process.argv.slice(2);
+  var prog = process.argv[0];
+  var args = process.argv.slice(1);
   args.push('is-daemon');
 
   var output = program.log ? fs.openSync(program.log, 'a') : 'ignore';
